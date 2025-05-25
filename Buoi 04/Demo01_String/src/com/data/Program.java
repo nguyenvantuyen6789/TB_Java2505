@@ -40,5 +40,41 @@ public class Program {
         String[] result3 = fullName3.split(";");
 
         System.out.println(result3[2]);
+
+        // ham indexOf
+        System.out.println("ham indexOf");
+        String time = "Thoi gian nghi he den 15/8";
+        String chuoiA = "gia";
+        String chuoiB = "Gia";
+        String chuoiC = "i";
+
+        int viTri1 = time.indexOf(chuoiA);
+        int viTri2 = time.indexOf(chuoiB);
+        int viTri3 = time.indexOf(chuoiC);
+
+        System.out.println("Vi tri 1: " + viTri1);
+        System.out.println("Vi tri 2: " + viTri2);
+        System.out.println("Vi tri 3: " + viTri3);
+
+        System.out.println("Length: " + time.length());
+
+        String chuoi6 = "phanh abs cua anh absan bi hong";
+        String chuoiRe = "xx";
+
+        String result6 = chuoi6.replace("ab", "xx");
+        System.out.println("Replace: " + result6);
+
+        // So sánh String
+        String name1 = "a";
+        String name2 = new String("a");
+        String name3 = "a";
+
+        System.out.println("Ket qua so sanh name1 vs name3: " + (name1 == name3));
+        System.out.println("Ket qua so sanh name2 vs name3: " + (name2 == name3));
+
+        // so sanh equals: giá trị đều là a, nên sẽ là true
+        System.out.println("Ket qua so sanh name1 'equals' name3: " + (name1.equals(name3)));
+        System.out.println("Ket qua so sanh name2 'equals' name3: " + (name2.equals(name3)));
+
     }
 }
