@@ -1,2 +1,4 @@
-package com.data;public class Program2 {
+package com.data;
+
+public class Program2 {
 }
