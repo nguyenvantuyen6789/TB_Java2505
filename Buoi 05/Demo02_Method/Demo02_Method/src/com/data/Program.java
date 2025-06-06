@@ -36,5 +36,6 @@ public class Program {
         System.out.println(c);
         // tinh nang tiep theo
         // tinh nang thu 3
+        // tinh nang thu 4
     }
 }
