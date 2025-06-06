@@ -35,5 +35,6 @@ public class Program {
         int c = a + b;
         System.out.println(c);
         // tinh nang tiep theo
+        // tinh nang thu 3
     }
 }
