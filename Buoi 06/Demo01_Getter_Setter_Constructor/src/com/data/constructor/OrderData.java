@@ -14,6 +14,15 @@ public class OrderData {
         System.out.println("Hàm khởi tạo không tham số đã được gọi");
     }
 
+    public OrderData(int id, String address, String customerName) {
+        // code chạy ngay khi tạo đối tượng
+        System.out.println("Hàm khởi tạo CÓ tham số đã được gọi");
+
+        this.id = id;
+        this.address = address;
+        this.customerName = customerName;
+    }
+
     public int getId() {
         return id;
     }
