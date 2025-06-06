@@ -26,5 +26,13 @@ public class Program {
         System.out.println("Chu vi: " + chuVi);
         System.out.println("Dien Tich: " + dienTich);
 
+        // giao vien viet 1 doan code + giai thich: => len git
+        // đẩy nhều lần, giúp sv xem lại lịch sử code
+        // vd
+        // giang ve phep cộng 2 số
+        int a = 1;
+        int b = 2;
+        int c = a + b;
+        System.out.println(c);
     }
 }
