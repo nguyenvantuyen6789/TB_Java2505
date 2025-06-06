@@ -9,8 +9,8 @@ public class Car extends Vehicle {
     @Override
     public String toString() {
         return "Car{" +
-                "numSeat=" + numSeat +
-                ", id=" + id +
+                "id=" + id +
+                ", numSeat=" + numSeat +
                 ", name='" + name + '\'' +
                 '}';
     }

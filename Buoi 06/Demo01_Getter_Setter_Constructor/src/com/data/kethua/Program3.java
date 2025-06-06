@@ -8,5 +8,10 @@ public class Program3 {
         car1.name = "Kia morning";
 
         System.out.println(car1);
+
+        car1.showData();
+
+        Vehicle vehicle = new Vehicle();
+        System.out.println(vehicle);
     }
 }
