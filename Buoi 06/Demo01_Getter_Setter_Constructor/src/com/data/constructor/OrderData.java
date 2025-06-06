@@ -7,6 +7,11 @@ public class OrderData {
     private String address;
 
     private String customerName;
+    // ẩn danh có 1 constructor k tham so
+
+    // khi có constructor có tham số, thi contructor k tham so k duoc tạo ngầm định
+    // nữa
+
 
     // hàm khởi tạo k tham số
     public OrderData() {
@@ -45,5 +50,14 @@ public class OrderData {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    @Override
+    public String toString() {
+        return "in gia tri {" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", customerName='" + customerName + '\'' +
+                '}';
     }
 }
