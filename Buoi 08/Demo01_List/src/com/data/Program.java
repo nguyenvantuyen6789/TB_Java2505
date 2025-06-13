@@ -1,7 +1,6 @@
 package com.data;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Program {
     public static void main(String[] args) {
@@ -42,5 +41,6 @@ public class Program {
         // tạo ra 1 list số: tính tổng các số chẵn và in ra có bao
         // nhiêu số chẵn
         // sv thực hành
+
     }
 }
