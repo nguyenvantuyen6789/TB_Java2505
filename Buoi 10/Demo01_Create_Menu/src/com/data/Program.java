@@ -1,18 +1,16 @@
 package com.data;
 
 import com.data.connection.ConnectionDB;
+import com.data.model.Product;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-        // thực hành tạo menu
-        System.out.println("==== Chương trình quản lý điện thoại ====");
-        System.out.println("1. Quản lý điện thoại");
-        System.out.println("2. Quản lý khách hàng");
-        System.out.println("3. Quản lý hoá đơn");
-        System.out.println("4. Quản lý doanh thu");
-        System.out.println("5. Đăng xuất");
+        ProductDAOImpl productDAO = new ProductDAOImpl();
+        // menu
+        showMenu();
 
         System.out.println("====");
         System.out.println("Nhập chức năng tương ứng:");
@@ -27,7 +25,36 @@ public class Program {
         switch (n) {
             case 1:
                 System.out.println("=== Chức năng Quản lý điện thoại");
-                ProductDAOImpl.getListProduct();
+                showMenuProduct();
+
+                int numChucNang = 0;
+                sc = new Scanner(System.in);
+                numChucNang = sc.nextInt();
+
+                while (numChucNang < 1 || numChucNang > 5) {
+                    System.out.println("Số chức năng chưa đúng!. Vui lòng nhập lại:");
+                    numChucNang = sc.nextInt();
+                }
+                if (numChucNang == 1) {
+                    List<Product> products = productDAO.getListProduct();
+                    productDAO.show(products);
+                } else if (numChucNang == 4) {
+                    // hiển thị danh sách để chọn id
+                    List<Product> products = productDAO.getListProduct();
+                    productDAO.show(products);
+
+                    System.out.println("Nhập id điện thoại cần xoá:");
+                    int id = 0;
+                    sc = new Scanner(System.in);
+                    id = sc.nextInt();
+
+                    int numAffect = productDAO.delete(id);
+                    if (numAffect > 0) {
+                        System.out.println("Xoá điện thoại thành công, id = " + id);
+                    } else {
+                        System.out.println("Xoá không thành công, id không tồn tại");
+                    }
+                }
                 break;
             case 2:
                 System.out.println("Chức năng Quản lý khách hàng");
@@ -41,5 +68,24 @@ public class Program {
             default:
                 System.out.println("Chức năng Đăng xuất");
         }
+    }
+
+    private static void showMenu() {
+        // thực hành tạo menu
+        System.out.println("==== Chương trình quản lý điện thoại ====");
+        System.out.println("1. Quản lý điện thoại");
+        System.out.println("2. Quản lý khách hàng");
+        System.out.println("3. Quản lý hoá đơn");
+        System.out.println("4. Quản lý doanh thu");
+        System.out.println("5. Đăng xuất");
+    }
+
+    private static void showMenuProduct() {
+        System.out.println("==== Chọn chức năng bên dưới: ====");
+        System.out.println("1. Xem danh sách điện thoại");
+        System.out.println("2. Thêm mới điện thoại");
+        System.out.println("3. Cập nhật điện thoại");
+        System.out.println("4. Xoá điện thoại theo id");
+        System.out.println("5. Trở về");
     }
 }
