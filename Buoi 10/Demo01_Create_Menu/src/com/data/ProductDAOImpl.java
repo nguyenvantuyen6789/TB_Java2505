@@ -103,6 +103,9 @@ public class ProductDAOImpl {
 
         return countAffect;
     }
+    // sv cần hoàn thành thêm, sửa, xoá
+    // điện thoại bằng procedure
+    // sv làm trong 20p
     public int delete(int id) {
         Connection conn = null;
         int countAffect = 0;
