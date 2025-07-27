@@ -3,11 +3,15 @@ package com.data.entity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "employees")
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -40,4 +44,5 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "department_id")
     Department department;
+
 }

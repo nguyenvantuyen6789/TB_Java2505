@@ -3,11 +3,13 @@ package com.data.entity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
-@Data
+@Data // getter, setter, toString
 @Entity
 @Table(name = "departments")
 @FieldDefaults(level = AccessLevel.PRIVATE)
