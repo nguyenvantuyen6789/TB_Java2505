@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Account List</h4>
+    <p>Chương trình âm nhạc</p>
+
+    <p>Name: <span th:text="${name}"></span></p>
+    <div>
+        <span th:if="${name == 'Nguyễn Ngọc'}">Họ tên đủ kiện dự thi</span>
+        <span th:unless="${name == 'Nguyễn Ngọc'}">Họ tên chưa đủ kiện dự thi</span>
+        <span th:if="${name != 'Nguyễn Ngọc'}">Họ tên chưa đủ kiện dự thi</span>
+    </div>
+
+    <p>Age: <p th:text="${age}"></p></p>
+    <p>Địa chỉ: <p th:text="${address}"></p></p>
+    <p>Birthday: <p th:text="${birthday}"></p></p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Username</td>
+
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="obj : ${accounts}">
+                <td th:text="${obj.id}">Id</td>
+                <td th:text="${obj.username}">Username</td>
+                <td><a th:href="${'/account-delete/' + obj.id}">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

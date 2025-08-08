@@ -1,13 +1,13 @@
-package com.data;
+package com.example.demo_thymeleaf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ELearningT6CnNhom2Application {
+public class DemoThymeleafApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ELearningT6CnNhom2Application.class, args);
+        SpringApplication.run(DemoThymeleafApplication.class, args);
     }
 
 }
