@@ -44,14 +44,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="obj : ${accounts}">
-                <td th:text="${obj.id}">Id</td>
-                <td th:text="${obj.username}">Username</td>
-                <td th:text="${obj.fullName}">Full Name</td>
+                <tr th:each="obj : ${accounts}">
+                    <td th:text="${obj.id}">Id</td>
+                    <td th:text="${obj.username}">Username</td>
+                    <td th:text="${obj.fullName}">Full Name</td>
 
-                <td><a class="btn btn-outline-info btn-sm" th:href="${'/account-edit/' + obj.id}">Edit</a></td>
-                <td><a class="btn btn-outline-danger btn-sm" th:href="${'/account-delete/' + obj.id}">Delete</a></td>
-            </tr>
+                    <td>
+                        <a class="btn btn-outline-info btn-sm" th:attrId="${obj.id}" th:href="${'/account-edit/' + obj.id}">Edit</a>
+                    </td>
+                    <td><a class="btn btn-outline-danger btn-sm" th:href="${'/account-delete/' + obj.id}">Delete</a></td>
+                </tr>
             </tbody>
         </table>
     </div>

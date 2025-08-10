@@ -75,4 +75,20 @@ public class AccountController {
 
         return "AccountEdit";
     }
+
+    @PostMapping("account-update/{id}")
+    public String update(@PathVariable int id,
+            @RequestParam String username,
+            @RequestParam String password,
+            @RequestParam String fullName) {
+
+        Account account = accountService.findById(id).get();
+        account.setUsername(username);
+        account.setPassword(password);
+        account.setFullName(fullName);
+
+        accountService.save(account);
+
+        return "redirect:/account-list";
+    }
 }
