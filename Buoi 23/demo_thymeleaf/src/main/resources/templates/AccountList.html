@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- c1: dùng CDN link có sẵn -->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>-->
+
+    <!-- c2: tải file css và js về dùng -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <h4>Account List</h4>
+    <a href="/account-add" class="btn btn-primary btn-sm">Add</a>
+<!--    <p>Chương trình âm nhạc</p>-->
+
+<!--    <p>Name: <span th:text="${name}"></span></p>-->
+<!--    <div>-->
+<!--        <span th:if="${name == 'Nguyễn Ngọc'}">Họ tên đủ kiện dự thi</span>-->
+<!--        <span th:unless="${name == 'Nguyễn Ngọc'}">Họ tên chưa đủ kiện dự thi</span>-->
+<!--        <span th:if="${name != 'Nguyễn Ngọc'}">Họ tên chưa đủ kiện dự thi</span>-->
+<!--    </div>-->
+
+<!--    <p>Age: <p th:text="${age}"></p></p>-->
+<!--    <p>Địa chỉ: <p th:text="${address}"></p></p>-->
+<!--    <p>Birthday: <p th:text="${birthday}"></p></p>-->
+
+    <!-- .table: tạo form bảng đẹp -->
+    <!-- .table-striped: highlight các dòng -->
+    <!-- .table-hover: highlight các dòng khi di chuột vào -->
+    <!-- .table-bordered: tạo viền -->
+    <div class="container">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <td>Id</td>
+                <td>Username</td>
+                <td>Full Name</td>
+
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="obj : ${accounts}">
+                <td th:text="${obj.id}">Id</td>
+                <td th:text="${obj.username}">Username</td>
+                <td th:text="${obj.fullName}">Full Name</td>
+
+                <td><a class="btn btn-outline-info btn-sm" th:href="${'/account-edit/' + obj.id}">Edit</a></td>
+                <td><a class="btn btn-outline-danger btn-sm" th:href="${'/account-delete/' + obj.id}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

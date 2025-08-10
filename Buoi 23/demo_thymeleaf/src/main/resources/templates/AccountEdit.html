@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- c2: tải file css và js về dùng -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h4>Account Edit</h4>
+
+        <form th:action="${'/account-update/' + account.id}" method="post">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" th:value="${account.username}" id="username" name="username" class="form-control form-control-sm" />
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" th:value="${account.password}" id="password" name="password" class="form-control form-control-sm" />
+            </div>
+
+            <div>
+                <label for="fullName">Full Name</label>
+                <input type="text" th:value="${account.fullName}" id="fullName" name="fullName" class="form-control form-control-sm" />
+            </div>
+
+            <div>
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday" class="form-control form-control-sm" />
+            </div>
+
+            <div>
+                <!-- .btn: lên hình nút -->
+                <!-- .btn-primary: nút xanh -->
+                <!-- .btn-success: nút xanh -->
+                <!-- .btn-danger: nút đỏ -->
+                <!-- .btn-warning: nút vàng -->
+                <input type="submit" value="Update" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
